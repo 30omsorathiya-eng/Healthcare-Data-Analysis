@@ -1,15 +1,18 @@
 import streamlit as st
+import pandas as pd
 
-st.title("Healthcare Data Analysis Dashboard")
+st.title("Border Processing System Dashboard")
 
-st.write("Welcome to my Data Analyst Project")
+st.write("This app shows basic analysis of children flow data.")
 
-st.header("Project Overview")
-st.write("This project analyzes healthcare data using Python, Tableau, and visualization tools.")
+# Load data
+data = pd.read_excel("HEATHCARE ANALYST PROJECT.xlsx")
 
-st.header("Insights")
-st.write("• Patient trends analysis")
-st.write("• Healthcare system load")
-st.write("• Data-driven decision making")
+st.subheader("Dataset Preview")
+st.write(data.head())
 
-st.success("Project successfully deployed using Streamlit 🚀")
+st.subheader("Summary Statistics")
+st.write(data.describe())
+
+st.subheader("Apprehended Over Time")
+st.line_chart(data["Children apprehended and placed in CBP custody"])
