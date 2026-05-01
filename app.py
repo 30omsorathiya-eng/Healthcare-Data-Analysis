@@ -15,4 +15,4 @@ st.subheader("Summary Statistics")
 st.write(data.describe())
 
 st.subheader("Apprehended Over Time")
-st.line_chart(data["Children apprehended and placed in CBP custody"])
+st.line_chart(data["Children apprehended and placed in CBP custody*"])
