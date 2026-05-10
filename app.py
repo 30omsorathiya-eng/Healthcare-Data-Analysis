@@ -27,7 +27,7 @@ st.subheader("Key Performance Indicators")
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    total_apprehended = data["Children apprehended and placed in CBP custody"].sum()
+    total_apprehended = data["Children apprehended and placed in CBP custody*"].sum()
     st.metric("Total Children Apprehended", f"{total_apprehended:,}")
 
 with col2:
@@ -42,7 +42,7 @@ with col3:
 # CHARTS
 # ---------------------------
 st.subheader("Children Apprehended Over Time")
-st.line_chart(data["Children apprehended and placed in CBP custody"])
+st.line_chart(data["Children apprehended and placed in CBP custody*"])
 
 st.subheader("CBP vs HHS System Load")
 st.line_chart(
